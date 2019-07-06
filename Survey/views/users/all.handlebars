@@ -1,0 +1,11 @@
+{{#each USER}}
+  <div class="card card-body mb-2">
+
+    <h4>{{username}}</h4>
+    <p>Started On: {{date}}</p>
+    <a class="btn btn-dark btn-block mb-2" href="/FM/all/{{id}}">View Profile</a>
+
+  </div>
+{{else}}
+  <p>No current surveys on headline</p>
+{{/each}}

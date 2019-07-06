@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="canonical"
+      href="/web/tweet-button">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+
+    <title>Form Generator</title>
+</head>
+<body>
+  <div id="fb-root"></div>
+  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v3.3"></script>
+    {{> _navbar}}
+
+    <div class="container">
+        {{> _msg}}
+        {{> _errors}}
+        {{{body}}}
+    </div>
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script> -->
+  </body>
+<script>
+
+function ABC(){
+
+  if(document.getElementsByClassName('navbar-collapse')[0].style.display!='flex'){
+    document.getElementsByClassName('navbar-expand-sm')[0].style.height='auto';
+  document.getElementsByClassName('navbar-collapse')[0].style.visibility='collapse';
+  document.getElementsByClassName('navbar-collapse')[0].style.display='flex';
+  document.getElementsByClassName('navbar-collapse')[0].style.zIndex='100';
+  document.getElementsByClassName('navbar-expand-sm')[0].style.zIndex='100';
+  document.getElementsByClassName('navbar-expand-sm')[0].style.display='flex';
+for(var i=0;i<document.getElementsByClassName('nav-item').length;i++)
+  document.getElementsByClassName('nav-item')[i].style.visibility='visible';
+
+}
+else{
+  document.getElementsByClassName('navbar-collapse')[0].style.visibility='hidden';
+  document.getElementsByClassName('navbar-collapse')[0].style.display='none';
+  document.getElementsByClassName('navbar-expand-sm')[0].style.height='4rem';
+for(var i=0;i<document.getElementsByClassName('nav-item').length;i++)
+  document.getElementsByClassName('nav-item')[i].style.visibility='hidden';
+
+
+}
+
+
+
+}
+
+
+
+function c(){
+for(var j=0;j<document.getElementsByClassName('questionCheck').length;j++)
+{
+  document.getElementsByClassName('questionCheck')[j].nextElementSibling.value=+document.getElementsByClassName('questionCheck')[j].parentNode.children.length-4+document.getElementsByClassName('questionCheck')[j].nextElementSibling.value ;
+}
+
+for(var j=0;j<document.getElementsByClassName('questionRadioR').length;j++)
+{
+    document.getElementsByClassName('questionRadioR')[j].nextElementSibling.value=+document.getElementsByClassName('questionRadioR')[j].parentNode.children.length-4+document.getElementsByClassName('questionRadioR')[j].nextElementSibling.value ;
+}
+
+
+}
+var uni=0;
+var check=0;
+var radio=0;
+
+function a(){
+
+  if(event.target.innerHTML=='Add Question!'){
+  console.log(event.target.innerHTML);
+  // <i class=aria-hidden="true"></i>
+  var delet=document.createElement('i');
+  delet.className="fa fa-times"
+delet.setAttribute('aria-hidden', 'true');
+delet.addEventListener('click',function(event)
+{
+  if(event.target.nextSibling.className=='question'){
+    event.target.parentNode.parentNode.removeChild(event.target.parentNode);
+  }
+});
+
+var a=document.createElement('div');
+a.className='form-group';
+var b=document.createElement('label');
+b.for='question';
+b.className='question';
+b.innerHTML=' Question:'
+var c=document.createElement('input');
+c.className='form-control';
+c.name='question';
+c.type='text';
+c.required=true;
+
+var x=document.getElementById('AAA');
+
+a.appendChild(delet);
+a.appendChild(b);
+a.appendChild(c);
+var element=document.getElementById('btn');
+
+var a2=document.createElement('label');
+a2.className='i';
+a2.innerHTML='Text';
+
+var a3=document.createElement('input');
+a3.type='radio';
+a3.checked='checked';
+a3.name='radio'+uni;
+a3.value='text';
+a3.className='heya';
+
+var a4=document.createElement('span');
+a4.className='checkmark';
+a2.appendChild(a3);
+a2.appendChild(a4);
+
+// x.insertBefore(a2, element);
+a.appendChild(a2);
+
+ a2=document.createElement('label');
+a2.className='i';
+a2.innerHTML='Email';
+
+ a3=document.createElement('input');
+ a3.type='radio';
+ a3.name='radio'+uni;
+ a3.value='email';
+ a3.className='heya';
+
+ a4=document.createElement('span');
+a4.className='checkmark';
+a2.appendChild(a3);
+a2.appendChild(a4);
+
+// x.insertBefore(a2, element);
+a.appendChild(a2);
+
+
+a2=document.createElement('label');
+a2.className='i';
+a2.innerHTML='Number';
+
+a3=document.createElement('input');
+a3.type='radio';
+a3.name='radio'+uni;
+a3.value='number';
+a3.className='heya';
+
+a4=document.createElement('span');
+a4.className='checkmark';
+a2.appendChild(a3);
+a2.appendChild(a4);
+
+a.appendChild(a2);
+// x.insertBefore(a2, element);
+
+var a2=document.createElement('label');
+a2.className='i';
+a2.innerHTML='Paragraph';
+
+var a3=document.createElement('input');
+a3.type='radio';
+a3.name='radio'+uni;
+a3.value='paragraph';
+a3.className='heya';
+
+var a4=document.createElement('span');
+a4.className='checkmark';
+a2.appendChild(a3);
+a2.appendChild(a4);
+
+// x.insertBefore(a2, element);
+a.appendChild(a2);
+
+
+x.insertBefore(a, element);
+
+uni++;
+}
+
+else if(event.target.innerHTML=='Add CheckBoxes!')
+{
+
+  var delet=document.createElement('i');
+  delet.className="fa fa-times"
+delet.setAttribute('aria-hidden', 'true');
+delet.addEventListener('click',function(event){
+  if(event.target.nextSibling.className=='questionCheck')
+  {
+    event.target.parentNode.parentNode.removeChild(event.target.parentNode);
+
+  }
+});
+var a=document.createElement('div');
+a.className='form-group';
+var b=document.createElement('label');
+b.for='questionCheck';
+b.className='questionCheck';
+b.innerHTML=' Question:'
+var c=document.createElement('input');
+c.className='form-control';
+c.name='questionCheck';
+c.type='text';
+c.required=true;
+
+var x=document.getElementById('AAA');
+
+var d=document.createElement('i');
+d.className='fa fa-plus';
+d.setAttribute('aria-hidden','true');
+d.addEventListener('click',function(event){
+  var div=document.createElement('div');
+  var a3=document.createElement('input');
+  a3.type='text';
+  a3.name='Check'+check;
+  a3.className='Check'+check;
+  a3.placeholder='Enter text';
+  a3.style.marginTop='1.5rem';
+  a3.required=true;
+  check++;
+
+  var dele=document.createElement('i');
+  dele.className="fa fa-times"
+  dele.setAttribute('aria-hidden', 'true');
+  dele.addEventListener('click',function(event){
+    event.target.parentNode.parentNode.removeChild(event.target.parentNode);
+
+  })
+  div.appendChild(a3);
+  div.appendChild(dele);
+  a.appendChild(div);
+
+
+});
+a.appendChild(delet);
+a.appendChild(b);
+a.appendChild(c);
+a.appendChild(d);
+
+var element=document.getElementById('btn');
+//
+var div=document.createElement('div');
+div.style.display='block';
+
+var a3=document.createElement('input');
+a3.type='text';
+a3.name='Check'+check;
+a3.className='Check'+check;
+a3.style.marginTop='1.5rem';
+a3.placeholder='Enter text';
+a3.required=true;
+check++;
+
+// a.appendChild(a2);
+div.appendChild(a3);
+a.appendChild(div);
+
+var v=document.createElement('div');
+v.style.display='block';
+ a3=document.createElement('input');
+a3.type='text';
+a3.name='Check'+check;
+a3.className='Check'+check;
+a3.placeholder='Enter text';
+a3.style.marginTop='1.5rem';
+a3.required=true;
+check++;
+
+var dele=document.createElement('i');
+dele.className="fa fa-times"
+dele.setAttribute('aria-hidden', 'true');
+dele.addEventListener('click',function(event){
+  event.target.parentNode.parentNode.removeChild(event.target.parentNode);
+  // console.log(  event.target.parentNode.parentNode);
+})
+
+
+v.appendChild(a3);
+v.appendChild(dele);
+a.appendChild(v);
+
+
+x.insertBefore(a, element);
+  }
+
+
+
+
+
+  else if(event.target.innerHTML=='Add Radio!')
+  {
+
+
+    var delet=document.createElement('i');
+    delet.className="fa fa-times"
+  delet.setAttribute('aria-hidden', 'true');
+  delet.addEventListener('click',function(event){
+    if(event.target.nextSibling.className=='questionRadioR')
+    {
+      event.target.parentNode.parentNode.removeChild(event.target.parentNode);
+
+    }
+  });
+  var a=document.createElement('div');
+  a.className='form-group';
+  var b=document.createElement('label');
+  b.for='questionRadioR';
+  b.className='questionRadioR';
+  b.innerHTML=' Question:'
+  var c=document.createElement('input');
+  c.className='form-control';
+  c.name='questionRadioR';
+  c.type='text';
+  c.required=true;
+
+  var x=document.getElementById('AAA');
+
+  var d=document.createElement('i');
+  d.className='fa fa-plus';
+  d.setAttribute('aria-hidden','true');
+  d.addEventListener('click',function(event){
+    var div=document.createElement('div');
+    var a3=document.createElement('input');
+    a3.type='text';
+    a3.name='RadioR'+radio;
+    a3.className='RadioR'+radio;
+    a3.placeholder='Enter text';
+    a3.style.marginTop='1.5rem';
+    a3.required=true;
+radio++;
+
+    var dele=document.createElement('i');
+    dele.className="fa fa-times"
+    dele.setAttribute('aria-hidden', 'true');
+    dele.addEventListener('click',function(event){
+
+      event.target.parentNode.parentNode.removeChild(event.target.parentNode);
+  console.log(  event.target.parentNode.parentNode);
+  console.log(  event.target.parentNode);
+
+    })
+
+    div.appendChild(a3);
+    div.appendChild(dele);
+    a.appendChild(div);
+
+
+  });
+  a.appendChild(delet);
+  a.appendChild(b);
+  a.appendChild(c);
+  a.appendChild(d);
+
+  var element=document.getElementById('btn');
+  //
+  var div=document.createElement('div');
+  div.style.display='block';
+
+  var a3=document.createElement('input');
+  a3.type='text';
+  a3.name='RadioR'+radio;
+  a3.className='RadioR'+radio;
+  a3.style.marginTop='1.5rem';
+  a3.placeholder='Enter text';
+  a3.required=true;
+radio++;
+
+  div.appendChild(a3);
+  a.appendChild(div);
+
+  var v=document.createElement('div');
+  v.style.display='block';
+   a3=document.createElement('input');
+  a3.type='text';
+  a3.name='RadioR'+radio;
+  a3.className='RadioR'+radio;
+  a3.placeholder='Enter text';
+  a3.style.marginTop='1.5rem';
+  a3.required=true;
+radio++;
+
+
+
+  v.appendChild(a3);
+  a.appendChild(v);
+
+
+  x.insertBefore(a, element);
+    }
+
+
+
+
+
+
+      else if(event.target.innerHTML=='Upload Images!')
+      {
+        var element=document.getElementById('btn');
+        var delet=document.createElement('i');
+        delet.className="fa fa-times"
+      delet.setAttribute('aria-hidden', 'true');
+      delet.addEventListener('click',function(event){
+        if(event.target.nextSibling.className=='file')
+        {
+          event.target.parentNode.parentNode.removeChild(event.target.parentNode);
+        }
+      });
+      var a=document.createElement('div');
+      a.className='form-group';
+      var b=document.createElement('label');
+      b.for='file';
+      b.className='file';
+      b.innerHTML=' Question:'
+      var c=document.createElement('input');
+      c.className='form-control';
+      c.name='file';
+      c.type='text';
+c.required=true;
+
+      var a1=document.createElement('div');
+      a1.className='inner';
+      var b1=document.createElement('label');
+      b1.for='maxLimit';
+      b1.innerHTML='';
+      var d=document.createElement('input');
+      d.className='form-control';
+      d.name='maxLimit';
+      d.value='1';
+      d.type='Number';
+      d.style.display='none';
+      d.placeholder='In Gbs';
+      d.setAttribute('max',5);
+      d.setAttribute('min',1);
+      d.value=1;
+
+
+      a1.appendChild(b1);
+      a1.appendChild(d);
+
+      var b2=document.createElement('label');
+      b2.for='maxNumber';
+      b2.innerHTML='';
+
+      var e=document.createElement('input');
+      e.className='form-control';
+      e.name='maxNumber';
+      e.type='Number';
+e.value=1;
+      e.setAttribute('max',5);
+      e.setAttribute('min',1);
+e.style.display='none';
+      a1.appendChild(b2);
+      a1.appendChild(e);
+
+
+      var x=document.getElementById('AAA');
+      a.appendChild(delet);
+      a.appendChild(b);
+      a.appendChild(c);
+      a.appendChild(a1);
+      x.insertBefore(a, element);
+        }
+}
+
+
+
+
+// var data = new FormData(document.forms.one);
+// data.append('user', 'person');
+// data.append('pwd', 'password');
+// data.append('organization', 'place');
+// data.append('requiredkey', 'key');
+//
+//   var xhr = new XMLHttpRequest();
+//
+//   xhr.open("POST", 'http://127.0.0.1:4000/FM', true);
+//   xhr.send(data);
+  // xhr.setRequestHeader("Content-Type", "application/json");
+  // var data = JSON.stringify({"email": "hey@mail.com", "password": "101010"});
+function imp()
+{
+
+
+
+  var radio=document.getElementsByName('radio');
+
+  for(var i=0;i<radio.length;i++)
+  {
+
+    if(radio[i].checked)
+    {
+      console.log(radio[i].parentNode);
+    }
+  }
+}
+
+</script>
+</html>

@@ -1,0 +1,63 @@
+<div class="row">
+  <div class="col-md-6 mx-auto">
+    <div class="card card-body">
+      <img class="logo" src="/img/logo.png">
+      <h3 class="text-center">
+        Account Registration
+      </h3>
+      <form action="/users/register" method="post">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" class="form-control"  name="name" value="{{name}}" required>
+        </div>
+        <div class="form-group">
+        <label for="username">UserName:</label><span id='heya'></span>
+        <input type="text" class="form-control" id='dei' onkeydown='dynamic()' onkeyup='dynamic()'  name="username" value="{{username}}" required>
+      </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" class="form-control" name="email" value="{{email}}" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" class="form-control" name="password" value="{{password}}" required>
+        </div>
+        <div class="form-group">
+          <label for="password2">Confirm Password</label>
+          <input type="password" class="form-control" name="password2" value="{{password2}}" required>
+        </div>
+        <input type='text' style='display:none;' id='ki' name='ki'value={{username}}>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
+<script>
+function dynamic()
+{ console.log('came');
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        if(xhttp.responseText=='*Too short'||xhttp.responseText=='*Availble'||xhttp.responseText=='*Already Exists')
+        {
+        if(xhttp.responseText=='*Too short'||xhttp.responseText=='*Already Exists')
+          {document.getElementById("heya").style.color='red';
+document.getElementById("ki").value='red';
+        }
+else if(xhttp.responseText=='*Availble')
+{document.getElementById("heya").style.color='green';
+document.getElementById("ki").value='green';}
+
+          document.getElementById("heya").innerHTML = xhttp.responseText;
+        }
+        else
+{        document.getElementById("heya").innerHTML = '';
+document.getElementById("ki").value='red';
+}
+      }
+  };
+  xhttp.open("GET", "kira?a="+document.getElementById("dei").value, true);
+  xhttp.send();
+
+}
+</script>

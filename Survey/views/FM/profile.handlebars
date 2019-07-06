@@ -1,0 +1,17 @@
+{{#each FM}}
+  <div class="card card-body mb-2">
+
+<div style="right:15px; top:0.5rem; position:absolute;" class="fb-share-button" data-href="http://127.0.0.1:4000/FM/template/{{id}}" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2F127.0.0.1%3A4000%2FFM%2Ftemplate%2F{{id}}&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
+
+<div style="right:15px; top:2.5rem; position:absolute;"><a  href="https://twitter.com/share?ref_src=twsrc%5Etfw&text=Title:{{title}}%0DDetails:{{details}}%0DURL:"  class="twitter-share-button" data-url="http://127.0.0.1:4000/FM/template/{{id}}" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></div>
+
+    <h4>{{title}}</h4>
+    <p>{{details}}</p>
+    <p>Creation date: {{creationDate}}</p>
+    <p>Deadline:{{deadDate}}<p>
+    <a class="btn btn-dark btn-block mb-2" href="/FM/template/{{id}}">Visit</a>
+
+  </div>
+{{else}}
+  <p>No current surveys on headline</p>
+{{/each}}

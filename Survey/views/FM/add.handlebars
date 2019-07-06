@@ -1,0 +1,35 @@
+
+<h3 onclick="a()" onMouseOver="this.style.color='white'; this.style.backgroundColor='black'; " onMouseOut="this.style.color='black'; this.style.backgroundColor='white';" style="cursor:pointer; position: absolute; top:10rem; left:0px; transition:all 1s;">Add Question!</h3>
+<h3 onclick="a()" onMouseOver="this.style.color='white'; this.style.backgroundColor='black'; " onMouseOut="this.style.color='black'; this.style.backgroundColor='white';" style="cursor:pointer; position: absolute; top:15rem; left:0px; transition:all 1s;">Add CheckBoxes!</h3>
+
+<h3 onclick="a()" onMouseOver="this.style.color='white'; this.style.backgroundColor='black'; " onMouseOut="this.style.color='black'; this.style.backgroundColor='white';" style="cursor:pointer; position: absolute; top:10rem; right:0px; transition:all 1s;">Add Radio!</h3>
+<h3 onclick="a()" onMouseOver="this.style.color='white'; this.style.backgroundColor='black'; " onMouseOut="this.style.color='black'; this.style.backgroundColor='white';" style="cursor:pointer; position: absolute; top:15rem; right:0px; transition:all 1s;">Upload Images!</h3>
+
+<div class="card card-body" style=" margin:auto; float:center; width:70%; height:100%; ">
+<center>  <h3>Create Your Own Survey</h3></center>
+  <form id='AAA' name='one' action="/FM" method="post">
+    <div class="form-group">
+      <label for="title">Title</label>
+      <input class="form-control" value='{{title}}' name="title" type="text" required>
+    </div>
+
+    <div class="form-group">
+      <label for="details">Details</label>
+      <textarea  class="form-control" name="details" required>{{details}}</textarea>
+    </div>
+
+
+<div class="form-group">
+  <label for="deadline">Deadline:</label>
+  <input value='{{deadline}}' class="form-control" placeholder='Enter Hrs...' name="deadline" type="number" required>
+</div>
+
+<div class="form-group">
+  <label for="submission">Number of submissions per User</label>
+  <input value='{{submission}}' class="form-control" name="submission" type="number" required>
+</div>
+
+
+    <button type="submit" onclick='c()'  id='btn' style="display:block;" class="btn btn-dark">Submit</button>
+  </form>
+</div>

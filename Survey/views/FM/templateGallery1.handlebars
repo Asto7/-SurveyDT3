@@ -1,0 +1,99 @@
+<div class="card card-body" style=" margin:auto; float:center; width:70%; height:100%; ">
+<center>  <h3>Create Your Own Survey</h3></center>
+  <form id="AAA" name="one" action="/FM" method="post">
+    <div class="form-group">
+      <label for="title">Title</label>
+      <input class="form-control" value="Event feedback" name="title" type="text" required>
+    </div>
+
+    <div class="form-group">
+      <label for="details">Details</label>
+      <textarea class="form-control" name="details" required>Thank you for participating in our event. We hope you had as much fun attending as we did organizing it.
+We want to hear your feedback so we can keep improving our logistics and content. (your answers will be anonymous).</textarea>
+    </div>
+
+
+<div class="form-group">
+  <label for="deadline">Deadline:</label>(*In hrs)
+  <input value="24" class="form-control" placeholder="Enter Hrs..." name="deadline" type="number" required>
+</div>
+
+<div class="form-group">
+  <label for="submission">Number of submissions per User</label>
+  <input value="1" class="form-control" name="submission" type="number" required="">
+</div>
+
+
+
+<div class="form-group"><i class="" aria-hidden="true"></i><label class="question"> Question:</label><input class="form-control" name="question" type="text" required value='What were your key take aways from this event?'>
+  <label class="i">Text<input checked type="radio" name="radio0" value="text" class="heya"><span class="checkmark"></span></label>
+  <label class="i">Email<input  type="radio" name="radio0" value="email" class="heya"><span class="checkmark"></span></label>
+  <label class="i">Number<input  type="radio" name="radio0" value="number" class="heya"><span class="checkmark"></span></label>
+</div>
+
+
+
+
+
+
+<div class="form-group"><i class="" aria-hidden="true"></i><label class="question"> Question:</label><input class="form-control" name="question" type="text" required value='Additional feedback on logistics:'>
+  <label class="i">Text<input checked type="radio" name="radio1" value="text" class="heya"><span class="checkmark"></span></label>
+  <label class="i">Email<input type="radio" name="radio1" value="email" class="heya"><span class="checkmark"></span></label>
+  <label class="i">Number<input type="radio" name="radio1" value="number" class="heya"><span class="checkmark"></span></label>
+</div>
+
+
+
+
+<div class="form-group"><i class="" aria-hidden="true"></i><label class="question"> Question:</label><input class="form-control" name="question" value='Any additional comments regarding the sessions or overall event?' type="text" required>
+  <label class="i">Text<input checked type="radio" name="radio2" value="text" class="heya"><span class="checkmark"></span></label>
+  <label class="i">Email<input type="radio" name="radio2" value="email" class="heya"><span class="checkmark"></span></label>
+  <label class="i">Number<input type="radio" name="radio2" value="number" class="heya"><span class="checkmark"></span></label>
+</div>
+
+
+<div class="form-group">
+  <i class="" aria-hidden="true"></i>
+  <label class="questionRadioR"> Question:</label>
+  <input class="form-control" name="questionRadioR" value='How satisfied were you with the event?' type="text" required>
+  <i class="" aria-hidden="true"></i>
+
+  <div style="display: block;"><input type="text" name="RadioR0" class="RadioR0" value="1" required style="margin-top: 1.5rem;"></div>
+  <div style="display: block;"><input type="text" name="RadioR1" class="RadioR1" value="2" required style="margin-top: 1.5rem;"></div>
+  <div style="display: block;"><input type="text" name="RadioR2" class="RadioR2" value="3" required style="margin-top: 1.5rem;"></div>
+  <div style="display: block;"><input type="text" name="RadioR3" class="RadioR3" value="4" required style="margin-top: 1.5rem;"></div>
+  <div style="display: block;"><input type="text" name="RadioR4" class="RadioR4" value="5" required style="margin-top: 1.5rem;"></div>
+
+</div>
+
+
+<div class="form-group"
+><i class="" aria-hidden="true"></i>
+  <label class="questionRadioR"> Question:</label><input class="form-control" name="questionRadioR" value='How relevant and helpful do you think it was for your job?' type="text" required><i class="" aria-hidden="true"></i>
+
+  <div style="display: block;"><input type="text" name="RadioR5" class="RadioR5" value="1" required style="margin-top: 1.5rem;"></div>
+  <div style="display: block;"><input type="text" name="RadioR6" class="RadioR6" value="2" required style="margin-top: 1.5rem;"></div>
+  <div style="display: block;"><input type="text" name="RadioR7" class="RadioR7" value="3" required style="margin-top: 1.5rem;"></div>
+  <div style="display: block;"><input type="text" name="RadioR8" class="RadioR8" value="4" required style="margin-top: 1.5rem;"></div>
+  <div style="display: block;"><input type="text" name="RadioR9" class="RadioR9" value="5" required style="margin-top: 1.5rem;"></div>
+
+</div>
+
+
+<div class="form-group"><i class="" aria-hidden="true"></i>
+  <label class="questionRadioR"> Question:</label><input class="form-control" name="questionRadioR" value='How satisfied were you with the session content?' type="text" required><i class="" aria-hidden="true"></i>
+
+  <div style="display: block;"><input type="text" name="RadioR10" class="RadioR10" value="1" required style="margin-top: 1.5rem;"></div>
+  <div style="display: block;"><input type="text" name="RadioR11" class="RadioR11" value="2" required style="margin-top: 1.5rem;"></div>
+  <div style="display: block;"><input type="text" name="RadioR12" class="RadioR12" value="3" required style="margin-top: 1.5rem;"></div>
+  <div style="display: block;"><input type="text" name="RadioR13" class="RadioR13" value="4" required style="margin-top: 1.5rem;"></div>
+  <div style="display: block;"><input type="text" name="RadioR14" class="RadioR14" value="5" required style="margin-top: 1.5rem;"></div>
+
+</div>
+
+
+
+
+    <button type="submit" onclick="c()" id="btn" style="display:block;" class="btn btn-dark">Make</button>
+  </form>
+</div>

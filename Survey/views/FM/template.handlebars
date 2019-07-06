@@ -1,0 +1,62 @@
+<form action="/FM/{{fm.id}}?_method=PUT" enctype="multipart/form-data" method="post" >
+
+  <div style="width:70%; margin:auto;" class="card card-body mb-2">
+<center> <h1>{{fm.title}}</h1></center>
+    <p>{{fm.details}}</p>
+
+    {{#each fm.question}}
+
+    <label style='font-weight:600; font-family:verdana; margin-left:1rem; font-style:normal; letter-spacing:1px;' for='question'>{{this.q}}</label><input  style="margin-left:1rem; width:50%;  margin-bottom:2.2rem; border-top-style:none; border-left-style:none; border-right-style:none;   border-bottom: 2px dashed black;" required placeholder='Your Answer' name='question' type='{{this.a}}'>
+
+    {{/each}}
+
+
+    {{#each fm.check}}
+    {{#with this as |imp|}}
+<label style='font-weight:600; font-family:verdana; font-style:normal; margin-left:1rem; letter-spacing:1px;' for='check'>{{this.q}}</label>
+
+
+{{#each this.sub}}
+<label style="display:inline; margin-left:1rem; font-size:1rem; " class='i' >{{this}}<input {{TRY @index}} type='checkbox'  value='{{this}}' style="margin-left:1rem; display:inline;" name='{{imp.q}} check' ><span  style="display:inline;" class='checkmark'></span></label>
+{{/each}}
+{{/with}}
+    {{/each}}
+
+<!-- {{#with fm.radio as |me|}}
+{{me}}
+{{/with}} -->
+
+    {{#each fm.radio}}
+{{#with this as |imp|}}
+    <label style='font-weight:600; font-family:verdana; font-style:normal; margin-left:1rem; letter-spacing:1px;'   for='radio'>{{this.q}}</label>
+
+
+    {{#each this.sub}}
+    <label style="display:inline; margin-left:1rem; font-size:1rem;" class='i' >{{this}}<input {{TRY @index}} type='radio'  style="margin-left:1rem; display:inline;" name='{{imp.q}} radio' value='{{this}}' ><span  style="display:inline;" class='checkmark'></span></label>
+    {{/each}}
+    {{/with}}
+    {{/each}}
+
+
+
+    {{#each fm.file}}
+      <label style="font-weight:500; margin-left: -1rem; font-family:verdana; font-style:normal;  letter-spacing:1px;" class='i' for='fileq'>{{this.q}}
+      </label>
+      <input type="file" accept="image/*" style="margin-left:1rem; display:block; color:green; font-size:1rem; margin-bottom:2rem;" name="file" id="file" value='Choose File' required class="inputfile" />
+
+
+{{/each}}
+<button type="submit" onclick='imp()'class='btn btn-dark'>Submit</button>
+    </div>
+</form>
+<script>
+var str=window.location.href;
+// console.log(str.includes('http://127.0.0.1:4000/FM/template'));
+if(str.includes('http://127.0.0.1:4000/FM/template'))
+{
+  // console.log({{fm.color}})
+  var a=['#5B6073','purple','orange','grey','lightblue','violet','#87A85C','#259B9A','#DEC79B','#C19434','#FB8122','#B89F5D','#E3E3E3','#4A2C40','#FAB162'];
+  // document.getElementById('hey').style.backgroundColor='blue';
+  document.getElementsByTagName('body')[0].style.backgroundColor=a[+{{fm.color}}];
+}
+</script>

@@ -1,0 +1,93 @@
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark mb-3">
+    <div class="container">
+      <a class="navbar-brand" style='letter-spacing:4px;' href="/">ASTO</a>
+      <button onclick='ABC()' class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/about">About</a>
+          </li>
+
+  {{#if user}}
+  <li class="nav-item">
+    <a class="nav-link" href="/FM/profile">Explore</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="/users/all">Users</a>
+  </li>
+{{/if}}
+        </ul>
+        <ul class="navbar-nav ml-auto">
+
+          {{#if user}}
+
+
+
+          <li class="nav-item">
+            <a href="/FM" class="nav-link" style='font-size:0.9rem;'>
+               My Surveys
+              </a>
+          </li>
+          <li class="nav-item">
+            <a href="/FM/add" class="nav-link" style='font-size:0.9rem;'>
+              Create
+              </a>
+          </li>
+          <li class="nav-item">
+            <a href="/FM/createtemplate" class="nav-link" style='font-size:0.9rem;'>
+              Templates
+              </a>
+          </li>
+
+
+
+<!--
+            <li class="nav-item dropdown">
+              <a href="#"
+                class="nav-link dropdown-toggle"
+                data-toggle="dropdown"
+                id="navbarDropdownMenulink" onclick="ABC()">Manage Surveys</a>
+                <div class="dropdown-menu">
+                  <a href="/FM"
+                  class="dropdown-item">
+                    List My Surveys!!!
+                  </a>
+                  <a href="/FM/add"
+                    class="dropdown-item">
+                    Create A new One!!!
+                  </a>
+
+                  <a href="/FM/createtemplate"
+                    class="dropdown-item">
+                    Template Gallery!!!
+                  </a>
+                </div>
+            </li> -->
+            <li class="nav-item">
+              <a href="/users/logout" class="nav-link">
+                Logout
+              </a>
+            </li>
+          {{else}}
+            <li class="nav-item">
+              <a href="/users/login" class="nav-link">
+                Login
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="/users/register" class="nav-link">
+                Register
+              </a>
+            </li>
+          {{/if}}
+
+        </ul>
+      </div>
+  </div>
+</nav>

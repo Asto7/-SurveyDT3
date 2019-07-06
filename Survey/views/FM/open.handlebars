@@ -1,0 +1,41 @@
+  <div style="width:70%; margin:auto;" class="card card-body mb-2">
+{{#with fm as |mey|}}
+<center> <h1>{{mey.title}}</h1></center>
+    <p>{{mey.details}}</p>
+    {{/with}}
+    {{#with FM as |me|}}
+
+
+    {{#each me.question}}
+    <label style='font-weight:600; font-family:verdana; margin-left:1rem; font-style:normal; letter-spacing:1px;' for='question'>{{this.q}}</label><input disabled value='{{this.a}}'  style="margin-left:1rem; width:50%;  margin-bottom:2.2rem; border-top-style:none; border-left-style:none; border-right-style:none;   border-bottom: 2px dashed black;"  >
+    {{/each}}
+
+
+    {{#each me.check}}
+<label style='font-weight:600; font-family:verdana; font-style:normal; margin-left:1rem; letter-spacing:1px;'>{{this.q}}</label>
+
+
+{{#each this.a}}
+<label style="display:inline; margin-left:1rem; font-size:1rem; " class='i' >{{this}}<input checked type='checkbox' disabled value='{{this}}' style="margin-left:1rem; display:inline;" name='{{imp.q}} check' ><span  style="display:inline;" class='checkmark'></span></label>
+{{/each}}
+    {{/each}}
+
+
+    {{#each me.radio}}
+    <label style='font-weight:600; font-family:verdana; font-style:normal; margin-left:1rem; letter-spacing:1px;'  >{{this.q}}</label>
+    <label style="display:inline; margin-left:1rem; font-size:1rem;" class='i' >{{this.a}}<input checked disabled type='radio'  style="margin-left:1rem; display:inline;"  ><span  style="display:inline;" class='checkmark'></span></label>
+    {{/each}}
+
+
+
+    {{#each me.fileurl}}
+      <label style="font-weight:500; margin-left: -1rem; font-family:verdana; font-style:normal;  letter-spacing:1px;" class='i'>{{this.q}}
+        <a href='/FM/info/{{this.url}}' style='color:green; display:block; font-size:1rem; text-decoration:none;'>  {{this.url}}</a>
+
+      </label>
+      <!-- <input type="file"  value='{{this.url}}' style="margin-left:1rem; display:block; color:green; font-size:1rem; margin-bottom:2rem;" name="file" id="file" value='Choose File' required class="inputfile" /> -->
+
+
+{{/each}}
+{{/with}}
+    </div>

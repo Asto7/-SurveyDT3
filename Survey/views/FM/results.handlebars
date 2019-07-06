@@ -1,0 +1,11 @@
+{{#with fm as |kira|}}
+{{#each kira.result}}
+  <div class="card card-body mb-2">
+  By: <h4 >{{email}}</h4>
+    <p>Submission Time: {{subDate}}</p>
+    <a class="btn btn-dark btn-block mb-2" href="/FM/open/{{id}}/{{kira._id}}">Open</a>
+  </div>
+{{else}}
+  <p>No Response Yet</p>
+{{/each}}
+{{/with}}
