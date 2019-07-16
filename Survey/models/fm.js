@@ -55,10 +55,7 @@ deadDate: {
   times:{type:Number,default:1},
   color:{type:Number,
   default:Math.floor(Math.random()*15)}
-  // Amount: {
-  //   type: String,
-  //   // required:true
-  // },
+
 
 
 });

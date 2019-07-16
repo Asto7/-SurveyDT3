@@ -51,12 +51,10 @@
 </form>
 <script>
 var str=window.location.href;
-// console.log(str.includes('http://127.0.0.1:4000/FM/template'));
-if(str.includes('http://127.0.0.1:4000/FM/template'))
+// console.log(str.includes('/FM/template'));
+if(str.includes('/FM/template'))
 {
-  // console.log({{fm.color}})
   var a=['#5B6073','purple','orange','grey','lightblue','violet','#87A85C','#259B9A','#DEC79B','#C19434','#FB8122','#B89F5D','#E3E3E3','#4A2C40','#FAB162'];
-  // document.getElementById('hey').style.backgroundColor='blue';
   document.getElementsByTagName('body')[0].style.backgroundColor=a[+{{fm.color}}];
 }
 </script>
